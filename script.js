@@ -1,4 +1,4 @@
-const daysOfTheWeek = [
+const daysOfWeek = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -8,18 +8,19 @@ const daysOfTheWeek = [
   "Saturday",
 ];
 
-function updateDateAndTime() {
+function updateDateTime() {
   const currentDatetime = new Date();
-  const currentDay = daysOfTheWeek[currentDatetime.getUTCDay()];
-  const currentUTCTime = currentDatetime.toUTCString();
+  const currentDay = daysOfWeek[currentDatetime.getUTCDay()];
+  const currentUTCTimeInMilliseconds = currentDatetime.getTime();
 
   document.querySelector(
     '[data-testid="currentDayOfTheWeek"]'
   ).textContent = `Current Day: ${currentDay}`;
   document.querySelector(
     '[data-testid="currentUTCTime"]'
-  ).textContent = `Current UTC Time: ${currentUTCTime}`;
+  ).textContent = `Current UTC Time (Milliseconds): ${currentUTCTimeInMilliseconds} ms`;
 }
 
-setInterval(updateDateAndTime, 1000);
-updateDateAndTime();
+setInterval(updateDateTime, 1000);
+
+updateDateTime();

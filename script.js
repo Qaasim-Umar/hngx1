@@ -18,7 +18,7 @@ function updateDateTime() {
   ).textContent = `Current Day: ${currentDay}`;
   document.querySelector(
     '[data-testid="currentUTCTime"]'
-  ).textContent = `Current UTC Time (Milliseconds): ${currentUTCTimeInMilliseconds} ms`;
+  ).textContent = `Current UTC Time : ${currentUTCTimeInMilliseconds} ms`;
 }
 
 setInterval(updateDateTime, 1000);
